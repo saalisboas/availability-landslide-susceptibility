@@ -1,0 +1,3 @@
+# alvo: dependencias
+#	comando
+
