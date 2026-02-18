@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 sheet_with_articles_info= np.loadtxt(
-    '/home/saalisboas/pub/mex/articles-mex-ensaio.csv',
+    'data/br/articles-br.csv',
     dtype='U',
     delimiter=',',
     quotechar='"',
@@ -13,10 +13,11 @@ sheet_with_articles_info= np.loadtxt(
 )
 
 # with the indices obtained in searching.py
-total_artigos = 52
-articles_open = [2, 9, 10, 11, 12, 19, 34, 48, 1, 22] 
-articles_request = [18, 6, 4, 27, 24, 16, 14, 5, 44, 45, 46, 49, 51, 13]
-articles_mentioned = [2, 9, 10, 11, 12, 19, 34, 48, 1, 22, 18, 6, 4, 27, 24, 16, 14, 5, 44, 45, 46, 49, 51, 13]
+# ls ../data/br/*.pdf | wc -l
+total_artigos = 52 
+articles_open = np.loadtxt('results/br-articles-open.txt', dtype=int)
+articles_request = np.loadtxt('results/br-articles-request.txt', dtype=int)
+articles_mentioned = np.concatenate((articles_open, articles_request))
 
 # standardize colors
 cmap = plt.colormaps['tab20']
