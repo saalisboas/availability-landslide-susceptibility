@@ -11,5 +11,8 @@ figures/: code/analysis-graphics.py results/br-articles-open.txt results/br-arti
 	mkdir -p figures/
 	python code/analysis-graphics.py
 
+paper/parcial.pdf: paper/parcial.tex paper/fluxograma.png paper/intro-refs.bib figures/
+	tectonic -X compile paper/parcial.tex
+
 clean:
 	rm -rf results/previo-*.txt figures/
