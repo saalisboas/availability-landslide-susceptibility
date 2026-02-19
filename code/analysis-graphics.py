@@ -26,22 +26,22 @@ cmapa = plt.colormaps['tab20b']
 # Geral pie
 frequencias = [total_artigos, len(articles_open), len(articles_request)]
 legenda = ['Não menciona disponibilidade', 'Disponibiliza os dados', 'Disponível mediante solicitação']
-plt.figure()
+plt.figure(layout='constrained')
 plt.suptitle('Proporção da disponibilidade')
 plt.pie(frequencias,
     labels=legenda,
     colors=cmap([0, 4, 10]),
     autopct='%1i%%',
 )
-plt.show()
+plt.savefig('figures/br-availability.png', bbox_inches='tight')
+#plt.show()
+
 # Year pie
 year_column = sheet_with_articles_info[:, 4]
-
 anos, frequencias = np.unique(year_column, return_counts=True)
-
 anos_mentioned, frequencias_mentioned = np.unique(year_column[articles_mentioned], return_counts=True)
-
 fig, axes = plt.subplots(1, 2, layout='constrained')
+fig.set_constrained_layout(True)
 fig.suptitle('Proporção de artigos por ano')
 axes[0].pie(frequencias, 
         labels=anos,
@@ -59,19 +59,15 @@ axes[1].pie(frequencias_mentioned,
         labeldistance=1.05,
 )
 axes[1].set_title('Mencionam disponibilidade', loc='right')
-
-plt.show()
+plt.savefig('figures/br-year.png', bbox_inches='tight')
+#plt.show()
 
 # Journal bars
 journal_column = sheet_with_articles_info[:, 5]
-
 revistas, frequencias = np.unique(journal_column, return_counts=True)
-
 revistas_open, frequencias_open = np.unique(journal_column[articles_open], return_counts=True)
-
 revistas_request, frequencias_request = np.unique(journal_column[articles_request], return_counts=True)
-
-plt.figure(layout='constrained')
+plt.figure(figsize=(8.0, 4.8), layout='constrained')
 plt.suptitle('Disponibilização por revista')
 plt.barh(revistas, 
     frequencias, 
@@ -86,24 +82,21 @@ plt.barh(revistas_open,
 plt.barh(revistas_request, 
          frequencias_request, 
          color=cmap([10]), 
-         left=[0, 0, 0, 0, 0, 1, 1, 2, 0, 1],
+         left=[0, 0, 0, 0, 0, 0, 1, 2, 0, 1],
          label='Disponível mediante solicitação',
 ) #left numbers are to position after open
 plt.xlabel('Número de artigos')
 plt.legend()
-plt.show()
-
+plt.savefig('figures/br-journal.png', bbox_inches='tight')
+#plt.show()
 
 # Citations histogram
 citations_column = sheet_with_articles_info[:, 6]
 citations_numbers = citations_column.astype(int)
-
 citados = citations_numbers
-
 citados_open = citations_numbers[articles_open]
-
 citados_request = citations_numbers[articles_request]
-
+plt.figure(layout='constrained')
 plt.suptitle('Número de citações')
 plt.hist(citados, 
          bins=[0, 25, 50, 75, 100, 125, 150, 175, 200], #to stacker
@@ -117,11 +110,12 @@ plt.hist(citados_open,
 )
 plt.hist(citados_request, 
          bins=[0, 25, 50, 75, 100, 125, 150, 175, 200], 
-         bottom=[8, 1, 0, 1, 1, 0, 0, 0], #after open
+         bottom=[7, 1, 0, 1, 1, 0, 0, 0], #after open
          color=cmap([10]),
          label='Disponível mediante solicitação',
 )
 plt.xlabel('Quantidade de citações')
 plt.ylabel('Número de artigos')
 plt.legend()
-plt.show()
+plt.savefig('figures/br-citations.png', bbox_inches='tight')
+#plt.show()
