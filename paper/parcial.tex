@@ -5,20 +5,22 @@
 % Pacotes
 \usepackage[utf8]{inputenc}
 \usepackage[TU]{fontenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{microtype}
-\usepackage[round, authoryear, sort]{natbib}
+
 \usepackage[brazil]{babel}
+
+\usepackage[round, authoryear, sort]{natbib}
+\bibliographystyle{unsrtnat}
 
 % Links e metadados
 \hypersetup{
 	colorlinks,
 	allcolors=blue,
 	breaklinks=true,
-	pdftitle={Reprodutibilidade de estudos sobre sescetibilidade à movimentos de massa no Brasil: análise bibliométrica},
+	pdftitle={Reprodutibilidade de estudos sobre suscetibilidade à movimentos 
+	de massa no Brasil: análise bibliométrica},
 	pdfauthor={Samira Lisboa Santos, Carlos Henrique Grohmann}
 }
 
@@ -26,8 +28,19 @@
 
 \begin{document}
 
-\title{Reprodutibilidade de estudos sobre suscetibilidade à movimentos de massa no Brasil: análise bibliométrica}
-\author{Samira  Lisboa Santos}
+\title{Reprodutibilidade de estudos sobre suscetibilidade à movimentos de massa no Brasil: 
+análise bibliométrica}
+\author{
+	Samira  Lisboa Santos\textsuperscript{1,3},
+	Carlos Henrique Grohmann\textsuperscript{2,3}
+ 	\\[0.2cm]
+	{\small
+		\textsuperscript{1}Aluno de graduação no Instituto de Astronomia, Geofísica e Ciências Atmosféricas;
+		\textsuperscript{2}Professor Titular do Instituto de Astronomia, Geofísica e Ciências Atmosféricas;
+		\textsuperscript{3}Spatial Analysis And Modelling Lab (SPAMLab), Universidade de São Paulo, Brasil. 
+	}
+}
+
 \date{February 2026}
 
 \maketitle
@@ -36,51 +49,83 @@
 
 
 \section{Introdução}
-Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, topográficos e climáticos da região \cite{Varnes1978}. A ocupação urbana desordenada em locais predispostos a tais ocorrências acarreta em acidentes e desastres; dessa forma, a adoção de medidas preventivas pode agir na contenção de danos \cite{ConhecerPrevenir}. 
+Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, 
+topográficos e climáticos da região \cite{Varnes1978}. A ocupação urbana desordenada 
+em locais predispostos a tais ocorrências acarreta em acidentes e desastres; dessa forma,
+a adoção de medidas preventivas pode agir na contenção de danos \cite{ConhecerPrevenir}. 
 
-A análise de suscetibilidade a movimentos de massa é composta por dados de fatores ambientais ou desencadeantes, de elementos em risco e do inventário de escorregamentos \cite{VanWesten2008112}, sendo este o principal, pois sua qualidade afeta a precisão dos resultados \cite{Steger20162729}. A utilização e reaproveitamento de inventários de qualidade permite, portanto, a comparação imparcial entre métodos de pesquisa \cite{Coelho2024}. 
+A análise de suscetibilidade a movimentos de massa é composta por dados de fatores 
+ambientais ou desencadeantes, de elementos em risco e do inventário de escorregamentos 
+\cite{VanWesten2008112}, sendo este o principal, pois sua qualidade afeta a precisão 
+dos resultados \cite{Steger20162729}. A utilização e reaproveitamento de inventários de 
+qualidade permite, portanto, a comparação imparcial entre métodos de pesquisa 
+\cite{Coelho2024}. 
 
-O compartilhamento de dados pode contribuir na identificação de possíveis erros na análise ou de falsas conclusões \cite{Munafo2017}. Porém, facilitar a replicação de estudos é raro na literatura científica: a chamada "crise de reprodutibilidade" \cite{Baker2016}. Uma minoria de artigos busca o livre acesso dos dados, muitas vezes prometidos a partir de "pedidos razoáveis" e não obtidos na prática \cite{Tedersoo2021}. 
+O compartilhamento de dados pode contribuir na identificação de possíveis erros na 
+análise ou de falsas conclusões \cite{Munafo2017}. Porém, facilitar a replicação de 
+estudos é raro na literatura científica: a chamada "crise de reprodutibilidade" 
+\cite{Baker2016}. Uma minoria de artigos busca o livre acesso dos dados, muitas vezes 
+prometidos a partir de "pedidos razoáveis" e não obtidos na prática \cite{Tedersoo2021}. 
 
-Assim, a proposta do projeto é avaliar a disponibilidade de dados em artigos de suscetibilidade à escorregamentos no território brasileiro. 
+Assim, a proposta do projeto é avaliar a disponibilidade de dados em artigos de 
+suscetibilidade à escorregamentos no território brasileiro. 
 
 \section{Objetivos}
-O ponto de partida do projeto é a criação de um banco de dados de artigos de suscetibilidade à movimentos de massa no território brasileiro, a partir de seleções prévias. Deve ser feita uma análise bibliométrica sobre opções de compartilhamento de dados, assim como análises estatísticas de interesse: ano, periódicos e citações. 
+O ponto de partida do projeto é a criação de um banco de dados de artigos de 
+suscetibilidade à movimentos de massa no território brasileiro, a partir de seleções 
+prévias. Deve ser feita uma análise bibliométrica sobre opções de compartilhamento 
+de dados, assim como análises estatísticas de interesse: ano, periódicos e citações. 
 
 \section{Métodos}
-As pesquisas e filtragens foram realizadas na plataforma Scopus, e a análise dos artigos feita baixando seus arquivos PDF. 
+As pesquisas e filtragens foram realizadas na plataforma Scopus, e a análise dos artigos 
+feita baixando seus arquivos PDF. 
 
     \begin{figure}[h]
-        \includegraphics[width=0.8\linewidth]{fluxogram.png}
-        \caption{Fluxograma da filtragem, construção da base de dados e análise dos artigos.}
+        \includegraphics[width=0.8\linewidth]{fluxograma.png}
+        \caption{Fluxograma da filtragem, construção da base de dados e 
+	análise dos artigos.}
         \label{fig:fluxo}
     \end{figure} 
 
-A primeira filtragem selecionou artigos em inglês; segundo \cite{Dias2021}, a quantidade de estudos sobre o assunto em português é baixa. A ambrangência de 10 anos (após 2015) coincide com o início do debate acerca de reprodutibilidade \cite{Baker2016}. 
+A primeira filtragem selecionou artigos em inglês; segundo \cite{Dias2021}, a quantidade 
+de estudos sobre o assunto em português é baixa. A ambrangência de 10 anos (após 2015) 
+coincide com o início do debate acerca de reprodutibilidade \cite{Baker2016}. 
 
-Para incluir mais artigos, procurou-se também por estados e capitais brasileiras e locais frequentemente mencionados nos artigos, sendo:
+Para incluir mais artigos, procurou-se também por estados e capitais brasileiras e locais 
+frequentemente mencionados nos artigos, sendo:
 \begin{itemize}
-    \item Percebidos com leitura da base primária: Serra do Mar, Petrópolis, São Sebastião, Mariana, Ouro Preto;
-    \item Indicados pela revisão de \cite{Dias2021}: Caraguatatuba, Serra das Araras, Cubatão, Angra dos Reis, Itaóca.
+    \item Percebidos com leitura da base primária: Serra do Mar, Petrópolis, 
+	São Sebastião, Mariana, Ouro Preto;
+    \item Indicados pela revisão de \cite{Dias2021}: Caraguatatuba, Serra das Araras, 
+	Cubatão, Angra dos Reis, Itaóca.
 \end{itemize} 
 
-A pesquisa de "Brazil" no resumo apresentou também artigos com análise multinacional ou com menção de exemplificação, portanto optou-se pela análise caso a caso para inclusão no banco de dados. 
+A pesquisa de "Brazil" no resumo apresentou também artigos com análise multinacional 
+ou com menção de exemplificação, portanto optou-se pela análise caso a caso para 
+inclusão no banco de dados. 
 
-Optou-se pela busca do nome das plataformas online de dados e códigos por serem a forma mais comum de compartilhamento livre \cite{Tedersoo2021}. A busca por artigos que não mencionam tais websites, mas disponibilizam seus dados mediante pedidos, foi analisada caso a caso. Buscou-se, com isso, evitar possíveis coincidências de termos buscados sem relação com o tema. 
+Optou-se pela busca do nome das plataformas online de dados e códigos por serem a forma 
+mais comum de compartilhamento livre \cite{Tedersoo2021}. A busca por artigos que não 
+mencionam tais websites, mas disponibilizam seus dados mediante pedidos, foi analisada 
+caso a caso. Buscou-se, com isso, evitar possíveis coincidências de termos buscados sem 
+relação com o tema. 
 
 \section{Resultados}
-Conforme esperado, a maioria dos artigos não menciona a disponibilização de seus dados, e uma ainda menor parte busca o compartilhamento livre (Figura \ref{fig:dispon}). \\
+Conforme esperado, a maioria dos artigos não menciona a disponibilização de seus dados, 
+e uma ainda menor parte busca o compartilhamento livre (Figura \ref{fig:dispon}). \\
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{br-dispon.png}
-    \caption{Um terço dos artigos menciona disponibilidade de dados, e destes mais da metade requer pedidos.}
+    \includegraphics[width=\linewidth]{../figures/br-availability.png}
+    \caption{Um terço dos artigos menciona disponibilidade de dados, e destes 
+	mais da metade requer pedidos.}
     \label{fig:dispon}
 \end{figure} \\
 Quanto à distribuição ao longo dos anos, mencionar o acesso aos dados revelou-se uma grande tendência de 2025, não prevista por anos anteriores (Figura \ref{fig:year}). \\
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{br-year.png}
-    \caption{Mais da metade dos artigos que disponibilizam seus dados de alguma forma são de 2025, mas menos de um terço da amostra de artigos é desse ano}
+    \includegraphics[width=\linewidth]{../figures/br-year.png}
+    \caption{Mais da metade dos artigos que disponibilizam seus dados de alguma forma 
+	são de 2025, mas menos de um terço da amostra de artigos é desse ano}
     \label{fig:year}
 \end{figure} \\
 
@@ -88,15 +133,19 @@ Por revista (Figura \ref{fig:journal}). \\
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\linewidth]{br-journal.png}
+    \includegraphics[width=\linewidth]{../figures/br-journal.png}
     \caption{Disponibilização de dados por revista}
     \label{fig:journal}
 \end{figure}
 
-A maioria dos artigos que mencionam a disponibilização de seus dados tem baixas citações, acompanhando a tendência geral. Logo, não se observa relação estrita entre aumento de citações e compartilhamento de dados. Porém, dentre os cinco artigos com mais de 100 citações, a proporção de disponibilidade muda: um possui dados de acesso livre e dois, mediante pedidos (Figura \ref{fig:cited}). \\
+A maioria dos artigos que mencionam a disponibilização de seus dados tem baixas citações, 
+acompanhando a tendência geral. Logo, não se observa relação estrita entre aumento de 
+citações e compartilhamento de dados. Porém, dentre os cinco artigos com mais de 100 
+citações, a proporção de disponibilidade muda: um possui dados de acesso livre e dois, 
+mediante pedidos (Figura \ref{fig:cited}). \\
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{br-cite.png}
+    \includegraphics[width=\linewidth]{../figures/br-citations.png}
     \caption{Histograma de citações e disponibilidade}
     \label{fig:cited}
 \end{figure} \\
@@ -107,7 +156,7 @@ A maioria dos artigos que mencionam a disponibilização de seus dados tem baixa
 \section{Conclusões}
 
 
-\printbibliography
+\bibliography{intro-refs}
 
 \end{document}
 
