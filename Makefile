@@ -1,7 +1,12 @@
 # alvo: dependencias
 #	comando
 
-.PHONY: clean
+.PHONY: clean all show
+
+all: paper/parcial.pdf
+
+show: paper/parcial.pdf
+	open paper/parcial.pdf
 
 results/: code/searching.py data/
 	mkdir -p results/
@@ -15,4 +20,4 @@ paper/parcial.pdf: paper/parcial.tex paper/fluxograma.png paper/intro-refs.bib f
 	tectonic -X compile paper/parcial.tex
 
 clean:
-	rm -rf results/previo-*.txt figures/
+	rm -rf results/previo-*.txt figures/ paper/parcial.pdf
