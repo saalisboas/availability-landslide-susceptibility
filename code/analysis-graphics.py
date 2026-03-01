@@ -24,7 +24,7 @@ cmap = plt.colormaps['tab20']
 cmapa = plt.colormaps['tab20b']
 
 # Geral pie
-frequencias = [total_artigos, len(articles_open), len(articles_request)]
+frequencias = [total_artigos - len(articles_open) - len(articles_request), len(articles_open), len(articles_request)]
 legenda = ['Não menciona disponibilidade', 'Disponibiliza os dados', 'Disponível mediante solicitação']
 plt.figure(layout='constrained')
 plt.suptitle('Proporção da disponibilidade')
