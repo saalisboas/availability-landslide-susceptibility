@@ -1,16 +1,21 @@
 % Relatório parcial PUB25/26
 
-\documentclass[twocolumn, A4]{article}
+\documentclass[onecolumn, A4]{article}
 
 % Pacotes
+
+% fonte
 \usepackage[utf8]{inputenc}
 \usepackage[TU]{fontenc}
+%figuras
 \usepackage{graphicx}
+% links, metadados
 \usepackage{hyperref}
+% formatação
 \usepackage{microtype}
-
+% língua
 \usepackage[brazil]{babel}
-
+% referências
 \usepackage[round, authoryear, sort]{natbib}
 \bibliographystyle{unsrtnat}
 
@@ -24,8 +29,6 @@
 	pdfauthor={Samira Lisboa Santos, Carlos Henrique Grohmann}
 }
 
-% Documento
-
 \begin{document}
 
 \title{Reprodutibilidade de estudos sobre suscetibilidade à movimentos de massa no Brasil: 
@@ -38,88 +41,127 @@ análise bibliométrica}
 	{\small \textsuperscript{2}Professor Titular do Instituto de Astronomia, Geofísica e Ciências Atmosféricas;} \\
 	{\small \textsuperscript{3}Spatial Analysis And Modelling Lab (SPAMLab), Universidade de São Paulo, Brasil.}
 }
-
-\date{February 2026}
+\date{Fevereiro, 2026}
 
 \maketitle
-
-\textbf{Resumo}
-
+\newpage
 
 \section{Introdução}
 Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, 
-topográficos e climáticos da região \cite{Varnes1978}. A ocupação urbana desordenada 
+topográficos e climáticos da região \citep{Varnes1978}. A ocupação urbana desordenada 
 em locais predispostos a tais ocorrências acarreta em acidentes e desastres; dessa forma,
-a adoção de medidas preventivas pode agir na contenção de danos \cite{ConhecerPrevenir}. 
+a adoção de medidas preventivas pode agir na contenção de danos \citep{ConhecerPrevenir}. 
 
 A análise de suscetibilidade a movimentos de massa é composta por dados de fatores 
 ambientais ou desencadeantes, de elementos em risco e do inventário de escorregamentos 
-\cite{VanWesten2008112}, sendo este o principal, pois sua qualidade afeta a precisão 
-dos resultados \cite{Steger20162729}. A utilização e reaproveitamento de inventários de 
+\citep{VanWesten}, sendo este o principal, pois sua qualidade afeta a precisão 
+dos resultados \citep{Steger20162729}. A utilização e reaproveitamento de inventários de 
 qualidade permite, portanto, a comparação imparcial entre métodos de pesquisa 
-\cite{Coelho2024}. 
+\citep{Coelho2024}. 
 
 O compartilhamento de dados pode contribuir na identificação de possíveis erros na 
-análise ou de falsas conclusões \cite{Munafo2017}. Porém, facilitar a replicação de 
-estudos é raro na literatura científica: a chamada "crise de reprodutibilidade" 
-\cite{Baker2016}. Uma minoria de artigos busca o livre acesso dos dados, muitas vezes 
-prometidos a partir de "pedidos razoáveis" e não obtidos na prática \cite{Tedersoo2021}. 
+análise ou de falsas conclusões \citep{Munafo2017}. Porém, facilitar a replicação de 
+estudos é raro na literatura científica: a chamada ``crise de reprodutibilidade'' 
+\citep{Baker2016}. 
+
+Uma minoria de artigos busca o livre acesso dos dados, muitas vezes 
+prometidos a partir de ``pedidos razoáveis'' e não obtidos na prática \citep{Tedersoo2021}. 
+A solicitação de artigos não compartilhados diretamente é impedida por diversos fatores,
+desde impossibilidade de contato ou obtenção dos dados a problemas pessoais ou profissionais,
+o que torna pedir dados uma grande barreira \citep{Hussey}.
 
 Assim, a proposta do projeto é avaliar a disponibilidade de dados em artigos de 
 suscetibilidade à escorregamentos no território brasileiro. 
 
 \section{Objetivos}
-O ponto de partida do projeto é a criação de um banco de dados de artigos de 
-suscetibilidade à movimentos de massa no território brasileiro, a partir de seleções 
-prévias. Deve ser feita uma análise bibliométrica sobre opções de compartilhamento 
-de dados, assim como análises estatísticas de interesse: ano, periódicos e citações. 
+O ponto de partida do projeto é a criação de um banco de dados com tais artigos,
+ a partir de seleções prévias. Assim, possibilita-se a análise bibliométrica, 
+com scripts buscando opções de compartilhamento de dados, leitura do material 
+e análises estatísticas de interesse: ano, periódicos e citações.
+ 
+A análise de ano da publicação preocupa-se
+em perceber como e quando esse debate afetou a comunidade científica da área. Já a 
+busca por periódicos pretende rastrear incentivos ao compartilhamento, que segundo
+\citet{Mufano2017} possuem impacto no aumento da proporção de artigos com dados abertos.   
+Um dos incentivos não institucionais é a expectativa de aumento no número de citações 
+\citep(Tedersoo2021), aqui também examinado.
+
+Dessa forma, deseja-se criar um panorama da disponibilidade de dados dos estudos
+no local, identificando tendências a partir dos debates sobre tal preocupação 
+na ciência. O projeto almeja, com isso, incentivar práticas de ciência aberta, 
+ressaltando a importância da reprodutibilidade nos estudos a partir do
+compartilhamento livre de dados em estudos da área. 
 
 \section{Métodos}
-As pesquisas e filtragens foram realizadas na plataforma Scopus, e a análise dos artigos 
-feita baixando seus arquivos PDF. 
+As pesquisas e filtragens foram realizadas na plataforma Scopus. A partir dos arquivos 
+PDF, a busca consistiu em termos-chave com scripts e em leitura, 
+integrando com os dados de publicação extraídos no Scopus. O processo é descrito no 
+fluxograma da Figura \ref{fig:fluxo}.
 
-    \begin{figure}[h]
+    \begin{figure}
         \includegraphics[width=0.8\linewidth]{fluxograma.png}
         \caption{Fluxograma da filtragem, construção da base de dados e 
 	análise dos artigos.}
         \label{fig:fluxo}
     \end{figure} 
 
-A primeira filtragem selecionou artigos em inglês; segundo \cite{Dias2021}, a quantidade 
-de estudos sobre o assunto em português é baixa. A ambrangência de 10 anos (após 2015) 
-coincide com o início do debate acerca de reprodutibilidade \cite{Baker2016}. 
+Conforme análise de \citet{Dias2021}, a maior parte dos artigos brasileiros são escritos
+em língua inglesa; isso foi confirmado em filtragens prévias de plataforma e, para
+análise, optou-se por selecionar artigos em inglês. A ambrangência de dez anos, 
+além de incluir a maior parte dos artigos disponíveis, coincide com o início da 
+preocupação com o debate acerca de reprodutibilidade na ciência \citet{Baker2016}.
 
-Para incluir mais artigos, procurou-se também por estados e capitais brasileiras e locais 
-frequentemente mencionados nos artigos, sendo:
+Para aumentar a base de dados, fez-se alterações nos termos de pesquisa para seleção 
+de artigos. Lendo os já encontrados e a análise bibliométrica \citep(Dias2021),
+foram incluídos termos de localização específicos de estudos constantes.
+A pesquisa de ``Brazil'' no resumo apresentou também artigos com análise multinacional 
+ou com menção de exemplificação, portanto optou-se pelo exame caso a caso para 
+inclusão no banco de dados. A pesquisa, portanto, consistiu em três partes:
+
 \begin{itemize}
-    \item Percebidos com leitura da base primária: Serra do Mar, Petrópolis, 
-	São Sebastião, Mariana, Ouro Preto;
-    \item Indicados pela revisão de \cite{Dias2021}: Caraguatatuba, Serra das Araras, 
-	Cubatão, Angra dos Reis, Itaóca.
-\end{itemize} 
+	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND ( TITLE ( Brazil ) OR KEY ( Brazil ) ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
+	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND ABS ( Brazil ) AND NOT ( TITLE ( Brazil ) OR KEY ( Brazil ) ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
+	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND TITLE-ABS-KEY ( "Caraguatatuba" OR " Serra das Araras" OR " Cubatão" OR " Angra dos Reis" OR " Itaóca" OR " Serra do Mar" OR " Petrópolis" OR " São Sabastião" OR " Mariana" OR " Ouro Preto" OR " Rio Grande do Sul" OR " Paraná;" OR " Santa Catarina" OR " São Paulo" OR " Rio de Janeiro" OR " Espírito Santo" OR " Minas Gerais" OR " Mato Grosso" OR " Goiás" OR " Brasília" OR " Tocantins" OR " Pará " OR " Amapá" OR " Roraima" OR " Rondônia" OR " Amazonas" OR " Acre" OR " Maranhão" OR " Piauí " OR " Ceará " OR " Rio Grande do Norte" OR " Paraíba" OR " Pernambuco" OR " Sergipe" OR " Bahia" OR " Alagoas" OR " Palmas" OR " Aracaju" OR " Florianópolis" OR " Boa Vista" OR " Porto Velho" OR " Porto Alegre" OR " Natal" OR " Teresina" OR " Recife" OR " Curitiba" OR " João Pessoa" OR " Belém" OR " Belo Horizonte" OR " Campo Grande" OR " Cuiabá" OR " São Luís" OR " Goiânia" OR " Vitória" OR " Fortaleza" OR " Salvador" OR " Manaus" OR " Macapá" OR " Maceió" OR " Rio Branco" OR " Pico do Jaraguá" OR " Fernando de Noronha" OR "brazilian" ) AND NOT TITLE-ABS-KEY ( Brazil ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
+\end{itemize}
 
-A pesquisa de "Brazil" no resumo apresentou também artigos com análise multinacional 
-ou com menção de exemplificação, portanto optou-se pela análise caso a caso para 
-inclusão no banco de dados. 
+Para análise estatística de informações dos artigos (ano, revista e número de citações) e
+organização de referências utilizou-se a ferramenta de exportação da plataforma Scopus.
+Os dados de publicação de cada uma das pesquisa foram unidos em arquivos .csv e .bib
+e, em conjunto aos arquivos .pdf dos artigos baixados, estão disponíveis em
+(LINK DRIVE) 
 
-Optou-se pela busca do nome das plataformas online de dados e códigos por serem a forma 
-mais comum de compartilhamento livre \cite{Tedersoo2021}. A busca por artigos que não 
-mencionam tais websites, mas disponibilizam seus dados mediante pedidos, foi analisada 
-caso a caso. Buscou-se, com isso, evitar possíveis coincidências de termos buscados sem 
-relação com o tema. 
+A busca por artigos foi analisada caso a caso. Buscou-se, com isso, evitar possíveis 
+coincidências de termos buscados sem relação com o tema. A pesquisa por termos
+chave, escolhidos a partir de leitura e percepção de padrões na bibliografia,
+foi feita em etapas para identificação de todos os artigos que mencionam 
+disponibilidade, de qualquer forma. Optou-se pela busca primária do nome das plataformas 
+online de dados e códigos por serem a forma mais comum de compartilhamento livre, 
+conforme \citet{Tedersoo2021}. Aqueles que negam possibilidade de compartilhamento 
+ou compartilham materiais/softwares livres  utilizados, sem mencionar os próprios códigos e dados,
+foram identificados para análise como não disponibilizadores de dados. 
 
 \section{Resultados}
-Conforme esperado, a maioria dos artigos não menciona a disponibilização de seus dados, 
-e uma ainda menor parte busca o compartilhamento livre (Figura \ref{fig:dispon}). \\
-\begin{figure}[h]
+
+O código inicial, de identificação de menção à disponibilidade, retornou artigos que 
+foram lidos para conferência precisa. Dos 52 artigos disponíveis na base de dados 
+construída, apenas 24 disponibilizam seus dados de alguma forma, em que 10 possuem
+compartilhamento livre, conforme Figura \ref{fig:dispon}. A impressão de que a 
+maioria dos artigos não possui opção de acesso aos dados se confirmou; tal número
+difere da média de disponibilidade na maioria das áreas \citep{Tedersoo2021}.
+
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-availability.png}
     \caption{Um terço dos artigos menciona disponibilidade de dados, e destes 
 	mais da metade requer pedidos.}
     \label{fig:dispon}
-\end{figure} \\
-Quanto à distribuição ao longo dos anos, mencionar o acesso aos dados revelou-se uma grande tendência de 2025, não prevista por anos anteriores (Figura \ref{fig:year}). \\
-\begin{figure}[h]
+\end{figure}
+
+
+A distribuição ao longo dos anos de debate acerca de disponibilidade
+revelo que  mencionar o acesso aos dados foi muito mais frequente  grande 
+tendência de 2025, não prevista por anos anteriores (Figura \ref{fig:year}).
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-year.png}
     \caption{Mais da metade dos artigos que disponibilizam seus dados de alguma forma 
