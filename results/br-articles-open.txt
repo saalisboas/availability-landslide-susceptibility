@@ -1,10 +1,13 @@
+# Linhas da planilha cujo arquivos indicaram
+# disponibilidade aberta.
+# Atenção: pula-se a linha de cabeçalho, ou seja,
+# é a linha - 2.
 2
-9
-10
-11
-12
-19
-34
-48
-1
-22
+38
+23
+20
+3
+31
+40
+21
+46
