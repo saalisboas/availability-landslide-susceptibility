@@ -8,7 +8,7 @@ all: paper/parcial.pdf
 show: paper/parcial.pdf
 	open paper/parcial.pdf
 
-results/: code/searching.py data/
+results/previo-br.txt: code/searching.py data/
 	mkdir -p results/
 	python code/searching.py > results/previo-br.txt 
 
