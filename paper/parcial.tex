@@ -46,6 +46,8 @@ análise bibliométrica}
 \maketitle
 \newpage
 
+\section{Resumo}
+
 \section{Introdução}
 Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, 
 topográficos e climáticos da região \citep{Varnes1978}. A ocupação urbana desordenada 
@@ -82,9 +84,9 @@ e análises estatísticas de interesse: ano, periódicos e citações.
 A análise de ano da publicação preocupa-se
 em perceber como e quando esse debate afetou a comunidade científica da área. Já a 
 busca por periódicos pretende rastrear incentivos ao compartilhamento, que segundo
-\citet{Mufano2017} possuem impacto no aumento da proporção de artigos com dados abertos.   
+\citet{Munafo2017} possuem impacto no aumento da proporção de artigos com dados abertos.   
 Um dos incentivos não institucionais é a expectativa de aumento no número de citações 
-\citep(Tedersoo2021), aqui também examinado.
+\citep{Tedersoo2021}, aqui também examinado.
 
 Dessa forma, deseja-se criar um panorama da disponibilidade de dados dos estudos
 no local, identificando tendências a partir dos debates sobre tal preocupação 
@@ -99,7 +101,7 @@ integrando com os dados de publicação extraídos no Scopus. O processo é desc
 fluxograma da Figura \ref{fig:fluxo}.
 
     \begin{figure}
-        \includegraphics[width=0.8\linewidth]{fluxograma.png}
+        \includegraphics[width=\linewidth]{fluxograma.png}
         \caption{Fluxograma da filtragem, construção da base de dados e 
 	análise dos artigos.}
         \label{fig:fluxo}
@@ -113,87 +115,134 @@ preocupação com o debate acerca de reprodutibilidade na ciência \citet{Baker2
 
 Para aumentar a base de dados, fez-se alterações nos termos de pesquisa para seleção 
 de artigos. Lendo os já encontrados e a análise bibliométrica \citep(Dias2021),
-foram incluídos termos de localização específicos de estudos constantes.
+foram incluídos termos de localização específicos para áreas de estudos frequentes.
 A pesquisa de ``Brazil'' no resumo apresentou também artigos com análise multinacional 
 ou com menção de exemplificação, portanto optou-se pelo exame caso a caso para 
-inclusão no banco de dados. A pesquisa, portanto, consistiu em três partes:
+inclusão no banco de dados. 
 
-\begin{itemize}
-	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND ( TITLE ( Brazil ) OR KEY ( Brazil ) ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
-	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND ABS ( Brazil ) AND NOT ( TITLE ( Brazil ) OR KEY ( Brazil ) ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
-	\item {\small TITLE-ABS-KEY ( "landslide susceptibility" ) AND TITLE-ABS-KEY ( "Caraguatatuba" OR " Serra das Araras" OR " Cubatão" OR " Angra dos Reis" OR " Itaóca" OR " Serra do Mar" OR " Petrópolis" OR " São Sabastião" OR " Mariana" OR " Ouro Preto" OR " Rio Grande do Sul" OR " Paraná;" OR " Santa Catarina" OR " São Paulo" OR " Rio de Janeiro" OR " Espírito Santo" OR " Minas Gerais" OR " Mato Grosso" OR " Goiás" OR " Brasília" OR " Tocantins" OR " Pará " OR " Amapá" OR " Roraima" OR " Rondônia" OR " Amazonas" OR " Acre" OR " Maranhão" OR " Piauí " OR " Ceará " OR " Rio Grande do Norte" OR " Paraíba" OR " Pernambuco" OR " Sergipe" OR " Bahia" OR " Alagoas" OR " Palmas" OR " Aracaju" OR " Florianópolis" OR " Boa Vista" OR " Porto Velho" OR " Porto Alegre" OR " Natal" OR " Teresina" OR " Recife" OR " Curitiba" OR " João Pessoa" OR " Belém" OR " Belo Horizonte" OR " Campo Grande" OR " Cuiabá" OR " São Luís" OR " Goiânia" OR " Vitória" OR " Fortaleza" OR " Salvador" OR " Manaus" OR " Macapá" OR " Maceió" OR " Rio Branco" OR " Pico do Jaraguá" OR " Fernando de Noronha" OR "brazilian" ) AND NOT TITLE-ABS-KEY ( Brazil ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
-\end{itemize}
-
-Para análise estatística de informações dos artigos (ano, revista e número de citações) e
-organização de referências utilizou-se a ferramenta de exportação da plataforma Scopus.
-Os dados de publicação de cada uma das pesquisa foram unidos em arquivos .csv e .bib
-e, em conjunto aos arquivos .pdf dos artigos baixados, estão disponíveis em
-(LINK DRIVE) 
-
-A busca por artigos foi analisada caso a caso. Buscou-se, com isso, evitar possíveis 
+A busca por disponibilidade foi analisada caso a caso. Buscou-se, com isso, evitar possíveis 
 coincidências de termos buscados sem relação com o tema. A pesquisa por termos
 chave, escolhidos a partir de leitura e percepção de padrões na bibliografia,
 foi feita em etapas para identificação de todos os artigos que mencionam 
 disponibilidade, de qualquer forma. Optou-se pela busca primária do nome das plataformas 
 online de dados e códigos por serem a forma mais comum de compartilhamento livre, 
 conforme \citet{Tedersoo2021}. Aqueles que negam possibilidade de compartilhamento 
-ou compartilham materiais/softwares livres  utilizados, sem mencionar os próprios códigos e dados,
+ou compartilham apenas materiais/softwares livres  utilizados, sem mencionar os próprios códigos e dados,
 foram identificados para análise como não disponibilizadores de dados. 
 
 \section{Resultados}
 
-O código inicial, de identificação de menção à disponibilidade, retornou artigos que 
-foram lidos para conferência precisa. Dos 52 artigos disponíveis na base de dados 
-construída, apenas 24 disponibilizam seus dados de alguma forma, em que 10 possuem
+\subsection{Banco de Dados}
+A busca de artigos consistiu em três fases:
+
+\begin{enumerate}
+	\item[a)] Fase A
+A etapa inicial buscou abranger a maioria dos artigos do tema e local. Foram encontrados 69 documentos, em que 52 passaram a compor a base de dados. Vale destacar a falta de aspas no termo "landslide susceptibility": sem correspondência exata, inclui-se sutis variações na escrita, que são relevantes na medida em que a pesquisa com aspas revelou apenas 44 artigos; porém, também foram encontrados artigos tangentes ao tema, sendo: 7 relacionados a estudos complementares a suscetibilidade (análise de estabilidade, mapeamento e inventário de escorregamentos, processamento de dados e riscos); 6 de estudos sociais; 4 de meteorologia. \\ \\
+{\small query: TITLE-ABS-KEY ( landslide susceptibility ) AND ( TITLE ( "Brazil" ) OR KEY ( "Brazil" ) ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
+
+	\item[b)] Fase B
+Analisar separadamente o termo de localização no resumo dos artigos deveu-se à percepção de que tal menção ocorre para exemplificação ou análises multinacionais. Devidamente, foram utilizados 11 artigos nesta pesquisa, tendo na pesquisa 4 tangentes ao tema e 2 fora do local de estudo. \\ \\
+{\small query: TITLE-ABS-KEY ( landslide susceptibility ) AND ABS ( Brazil ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND NOT ( TITLE ( Brazil ) OR KEY ( Brazil ) ) AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) )}
+
+	\item[c)] Fase C
+Mais termos foram utilizados para ampliação da base de dados. Isso deveu-se principalmente à preocupação em reduzir o número de artigos que, por não mencionarem o país no título ou no resumo ou na palavra-chave, ficariam fora da filtragem. A quantidade realmente atingida foi baixa, de 3 utilizados; 1 tinha tema tangente e 14 referiam-se a outros locais. Apesar disso, espera-se que para análises em língua portuguesa esse número aumente, pela maior adesão a publicações locais. \\ \\
+{\small query: TITLE-ABS-KEY ( landslide susceptibility ) AND TITLE-ABS-KEY ( ``Caraguatatuba'' OR " Serra das Araras'' OR " Cubatão'' OR " Angra dos Reis'' OR " Itaóca'' OR " Serra do Mar'' OR " Petrópolis'' OR " São Sabastião'' OR " Mariana'' OR " Ouro Preto'' OR " Rio Grande do Sul'' OR " Paraná'' OR " Santa Catarina'' OR " São Paulo'' OR " Rio de Janeiro'' OR " Espírito Santo'' OR " Minas Gerais'' OR " Mato Grosso'' OR " Goiás'' OR " Brasília'' OR " Tocantins'' OR " Pará'' OR " Amapá'' OR " Roraima'' OR " Rondônia'' OR " Amazonas'' OR " Acre'' OR " Maranhão'' OR " Piauí'' OR " Ceará'' OR " Rio Grande do Norte'' OR " Paraíba'' OR " Pernambuco'' OR " Sergipe'' OR " Bahia'' OR " Alagoas'' OR " Palmas'' OR " Aracaju'' OR " Florianópolis'' OR " Boa Vista'' OR " Porto Velho'' OR " Porto Alegre'' OR " Natal'' OR " Teresina'' OR " Recife'' OR " Curitiba'' OR " João Pessoa'' OR " Belém'' OR " Belo Horizonte'' OR " Campo Grande'' OR " Cuiabá'' OR " São Luís'' OR " Goiânia'' OR " Vitória'' OR " Fortaleza'' OR " Salvador'' OR " Manaus'' OR " Macapá'' OR " Maceió'' OR " Rio Branco'' OR " Pico do Jaraguá'' OR " Fernando de Noronha'' OR "brazilian'' ) AND NOT TITLE-ABS-KEY ( Brazil ) AND PUBYEAR > 2015 AND PUBYEAR < 2026 AND ( LIMIT-TO ( DOCTYPE , "ar" ) ) AND ( LIMIT-TO ( LANGUAGE , "English" ) ) }
+\end{enumerate}
+
+Em cada uma das pesquisas, os artigos foram analisados em planilhas .csv de controle; aqueles com compatibilidade ao tema tiveram seus arquivos .pdf baixados. Para análise estatística de informações (ano, revista e número de citações) e
+organização de referências utilizou-se a ferramenta de exportação da plataforma Scopus.
+Os dados de publicação de cada uma das pesquisa foram unidos em arquivos .csv e .bib
+e, em conjunto aos arquivos .pdf dos artigos baixados, estão disponíveis em \url{https://drive.google.com/file/d/1M2wevXGYJnugLZ7fbCGEHX41Z-74eYEG/view?usp=sharing}.
+
+\subsection{Disponibilidade}
+O código inicial de identificação em menção à disponibilidade retornou artigos que passaram à fase de leitura para conferência precisa. Esse retorno consistiu em três níveis, sendo buscados nos arquivos .pdf os termos:
+
+\begin{itemize}
+    \item `github', `zenodo'
+    \item `data availability statement', `reasonable request', `available on request', `available upon request'
+    \item `data availability', `code availability'
+\end{itemize}
+
+Dos 66 artigos disponíveis na base de dados 
+construída, apenas 28 disponibilizam seus dados de alguma forma, em que  possuem 9
 compartilhamento livre, conforme Figura \ref{fig:dispon}. A impressão de que a 
 maioria dos artigos não possui opção de acesso aos dados se confirmou; tal número
-difere da média de disponibilidade na maioria das áreas \citep{Tedersoo2021}.
+difere da média de disponibilidade esperada na maioria das áreas, que é maior \citep{Tedersoo2021}.
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-availability.png}
-    \caption{Um terço dos artigos menciona disponibilidade de dados, e destes 
-	mais da metade requer pedidos.}
+    \caption{A minoria dos artigos não menciona disponibilidade, e mesmo assim grande parte requer pedidos}
     \label{fig:dispon}
 \end{figure}
 
-
+\subsubsection{Passagem dos anos}
 A distribuição ao longo dos anos de debate acerca de disponibilidade
-revelo que  mencionar o acesso aos dados foi muito mais frequente  grande 
-tendência de 2025, não prevista por anos anteriores (Figura \ref{fig:year}).
+revelou que  mencionar o acesso aos dados foi implementado nos últimos 5 anos, tendo grande 
+tendência em 2025, não prevista por anos anteriores (Figura \ref{fig:year}).
+
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-year.png}
     \caption{Mais da metade dos artigos que disponibilizam seus dados de alguma forma 
-	são de 2025, mas menos de um terço da amostra de artigos é desse ano}
+	são de 2025, sendo um terço da amostra de artigos desse ano}
     \label{fig:year}
-\end{figure} \\
+\end{figure}
 
-Por revista (Figura \ref{fig:journal}). \\
+\subsubsection{Meios de publicação}
+As revistas com mais publicações no assunto possuem disponibilidade, mesmo que por pedidos. Isso pode refletir eficiência em políticas de publicação, conforme indicado por \citet{Munafo2017}.
+(Figura \ref{fig:journal}). \\
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-journal.png}
-    \caption{Disponibilização de dados por revista}
+    \caption{Disponibilidade por revista}
     \label{fig:journal}
 \end{figure}
 
-A maioria dos artigos que mencionam a disponibilização de seus dados tem baixas citações, 
-acompanhando a tendência geral. Logo, não se observa relação estrita entre aumento de 
-citações e compartilhamento de dados. Porém, dentre os cinco artigos com mais de 100 
-citações, a proporção de disponibilidade muda: um possui dados de acesso livre e dois, 
-mediante pedidos (Figura \ref{fig:cited}). \\
-\begin{figure}[h]
+\subsubsection{Citações}
+A maioria dos artigos que mencionam a disponibilização de seus dados tem baixas citações,  
+acompanhando a tendência geral. (Figura \ref{fig:cited}). Porém, a proporção de artigos com disponibilidade é maior entre os 5 mais citados em comparação ao restante de artigos.  Logo, não se observa relação estrita entre aumento de 
+citações e compartilhamento de dados. Essa esperança também é discutida em \citet{Tedersoo2021}.
+
+\begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../figures/br-citations.png}
     \caption{Histograma de citações e disponibilidade}
     \label{fig:cited}
-\end{figure} \\
+\end{figure}
 
 \section{Discussões}
 
 
 \section{Conclusões}
+
+\section{Cronograma final}
+\begin{table}
+\caption{Etapas do segundo semestre de projeto}
+\label{tab:cronograma}
+\begin{tabular}{|l|c|c|}
+\hline
+Tarefas & Trimestre 3 & Trimestre 4 \\
+\hline
+Brasil: Análises complementares (licenças, pedidos, métodos) & x & \\
+\hline
+Brasil: Língua portuguesa & x & \\
+\hline
+Brasil: Relatório final & x & x \\
+\hline
+América Latina: levantamento de artigos & x & x \\
+\hline
+América Latina: Língua espanhola & & x \\
+\hline
+América Latina: Análises principais (ano, revista, citações) & & x \\
+\hline
+América Latina: Análises complementares (licenças, pedidos, métodos) & & x \\
+\hline
+América Latina: Relatório & & x \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \bibliography{intro-refs}
