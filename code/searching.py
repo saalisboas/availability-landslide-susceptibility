@@ -10,7 +10,7 @@ sheet = np.loadtxt(
     delimiter=',',
     quotechar='"',
 ) #from Scopus search
-sheet_title_column = sheet[:, 3] #used for search in sheet
+sheet_title_column = sheet[:, 1] #used for search in sheet
 #select the info column. 
 sheet_doi_column = sheet[:, 7] 
 
