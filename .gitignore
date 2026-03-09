@@ -1,3 +1,5 @@
 figures/
-results/previo-*.txt
+results/*previo-*.txt*
 paper/parcial.pdf
+data/
+code/list.py
