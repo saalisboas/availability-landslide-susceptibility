@@ -46,8 +46,6 @@ análise bibliométrica}
 \maketitle
 \newpage
 
-\section{Resumo}
-
 \section{Introdução}
 Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, 
 topográficos e climáticos da região \citep{Varnes1978}. A ocupação urbana desordenada 
@@ -101,7 +99,7 @@ integrando com os dados de publicação extraídos no Scopus. O processo é desc
 fluxograma da Figura \ref{fig:fluxo}.
 
     \begin{figure}
-        \includegraphics[width=\linewidth]{fluxograma.png}
+        \includegraphics[width=0.6\linewidth]{fluxograma.png}
         \caption{Fluxograma da filtragem, construção da base de dados e 
 	análise dos artigos.}
         \label{fig:fluxo}
@@ -171,7 +169,7 @@ difere da média de disponibilidade esperada na maioria das áreas, que é maior
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{../figures/br-availability.png}
+    \includegraphics[width=0.6\linewidth]{../figures/br-availability.png}
     \caption{A minoria dos artigos não menciona disponibilidade, e mesmo assim grande parte requer pedidos}
     \label{fig:dispon}
 \end{figure}
@@ -183,7 +181,7 @@ tendência em 2025, não prevista por anos anteriores (Figura \ref{fig:year}).
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{../figures/br-year.png}
+    \includegraphics[width=0.6\linewidth]{../figures/br-year.png}
     \caption{Mais da metade dos artigos que disponibilizam seus dados de alguma forma 
 	são de 2025, sendo um terço da amostra de artigos desse ano}
     \label{fig:year}
@@ -195,7 +193,7 @@ As revistas com mais publicações no assunto possuem disponibilidade, mesmo que
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{../figures/br-journal.png}
+    \includegraphics[width=0.6\linewidth]{../figures/br-journal.png}
     \caption{Disponibilidade por revista}
     \label{fig:journal}
 \end{figure}
@@ -207,18 +205,22 @@ citações e compartilhamento de dados. Essa esperança também é discutida em 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{../figures/br-citations.png}
+    \includegraphics[width=0.6\linewidth]{../figures/br-citations.png}
     \caption{Histograma de citações e disponibilidade}
     \label{fig:cited}
 \end{figure}
 
-\section{Discussões}
-
-
 \section{Conclusões}
+A impressão de que a maioria dos artigos sobre suscetibilidade à movimento de massa no Brasil não disponibiliza seus dados ou seus códigos se confirmou. Foi criado um banco de dados com 66 artigos em inglês, a partir de 2010. Menos da metade menciona disponibilidade, todos nos últimos cinco anos, majoritariamente em 2025. Apenas 11\% dos estudos possuem acesso livre aos dados.
+
+O compartilhamento de dados é um tema central em discussões sobre reprodutibilidade e ciência aberta. Procura-se incentivar tais práticas institucional ou cientificamente. Revistas com grande número de publicações tem índices maiores de compartilhamento, o que pode indicar sucesso em políticas internas. Já a esperança de aumento no número de citações não se confirmou.
+
+Desse modo, pretende-se aprofundar a análise a fim de entender processos de reprodutibilidade: real acesso aos dados e licenças; envio de pedidos de dados; panorama dos métodos utilizados, que dependem fortemente da qualidade de seus dados.
+
+\nocite{*}
 
 \section{Cronograma final}
-\begin{table}
+\begin{table}[h]
 \caption{Etapas do segundo semestre de projeto}
 \label{tab:cronograma}
 \begin{tabular}{|l|c|c|}
@@ -245,7 +247,7 @@ América Latina: Relatório & & x \\
 \end{table}
 
 
-\bibliography{intro-refs}
+\bibliography{intro-refs, ../data/br/br.bib}
 
 \end{document}
 
