@@ -9,6 +9,7 @@ sheet = np.loadtxt(
     dtype='U',
     delimiter=',',
     quotechar='"',
+    skiprows=1,
 ) #from Scopus search
 sheet_title_column = sheet[:, 1] #used for search in sheet
 #select the info column. 
