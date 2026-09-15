@@ -14,7 +14,7 @@ sheet_with_articles_info= np.loadtxt(
 
 # with the indices obtained in searching.py
 # ls ../data/br/*.pdf | wc -l
-total_artigos = 52 
+total_artigos = 61 
 articles_open = np.loadtxt('results/br-articles-open.txt', dtype=int)
 articles_request = np.loadtxt('results/br-articles-request.txt', dtype=int)
 articles_mentioned = np.concatenate((articles_open, articles_request))
@@ -82,7 +82,7 @@ plt.barh(revistas_open,
 plt.barh(revistas_request,
          frequencias_request, 
          color=cmap([10]), 
-          left=[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0],
+         left=[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
          label='Disponível mediante solicitação',
 ) #left numbers are to position after open
 plt.xlabel('Número de artigos')
