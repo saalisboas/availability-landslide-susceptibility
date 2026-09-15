@@ -2,22 +2,19 @@
 # disponibilidade mediante pedidos.
 # Atenção: pula-se a linha de cabeçalho, ou seja,
 # é a linha - 2.
-16
-10
-59
-52
-6
-55
 0
-41
-28
-42
-22
-56
-46
-50
-62
-26
-58
+6
+10
+16
 18
-65
+22
+26
+28
+40
+41
+48
+49
+52
+53
+55
+56

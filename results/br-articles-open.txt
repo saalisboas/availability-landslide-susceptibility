@@ -3,11 +3,11 @@
 # Atenção: pula-se a linha de cabeçalho, ou seja,
 # é a linha - 2.
 2
-38
+3
+37
 23
 20
-3
-31
-40
+30
+39
 21
-46
+44
