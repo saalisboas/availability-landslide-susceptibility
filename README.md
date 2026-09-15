@@ -1,6 +1,5 @@
-# Descrição do projeto
+# Reprodutibilidade em estudos de suscetibilidade a movimentos de massa
 
-# Vou colocar os dados aqui para baixar. Lembrar do md5
-Arquivo de pdf brasil
-[articles-br](data/br/br.zip)
+Banco de dados disponíveis para download em [drive](https://drive.google.com/drive/folders/197zntIpqepTZvVp8mqkTdBbXwJq4Tf2v?usp=drive_link)
+
 
