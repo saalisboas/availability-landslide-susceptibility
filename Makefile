@@ -3,10 +3,10 @@
 
 .PHONY: clean all show
 
-all: paper/parcial.pdf
+all: paper/relatorio-2.pdf
 
-show: paper/parcial.pdf
-	open paper/parcial.pdf
+show: paper/relatorio-2.pdf
+	open paper/relatorio-2.pdf
 
 results/previo-br.txt: code/searching.py data/
 	mkdir -p results/
@@ -16,8 +16,8 @@ figures/: code/analysis-graphics.py results/br-articles-open.txt results/br-arti
 	mkdir -p figures/
 	python code/analysis-graphics.py
 
-paper/parcial.pdf: paper/parcial.tex paper/fluxograma.png paper/intro-refs.bib figures/
-	tectonic -X compile paper/parcial.tex
+paper/relatorio-2.pdf: paper/relatorio-2.tex paper/fluxograma.png paper/intro-refs.bib figures/
+	tectonic -X compile paper/relatorio-2.tex
 
 clean:
-	rm -rf results/previo-*.txt figures/ paper/parcial.pdf
+	rm -rf results/previo-*.txt figures/ paper/relatorio-2.pdf
