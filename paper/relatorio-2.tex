@@ -46,6 +46,9 @@ análise bibliométrica}
 \maketitle
 \newpage
 
+\section{Resumo}
+A reprodutibilidade em estudos de suscetibilidade a movimentos de massa possui relevância científica e social. A partir de três filtragens na plataforma Scopus, 61 artigos do tema foram obtidos. Estes foram lidos e suas informações extraídas a partir de códigos python e planilhas. A classificação de disponibilidade de dados e códigos, tal como a regionalização dos estudos, revelou que tal preocupação recente ainda se mostra deficiente.
+
 \section{Introdução}
 Movimentos de massa são processos geomorfológicos, influenciados por fatores geológicos, 
 topográficos e climáticos da região \citep{Varnes1978}. A ocupação urbana desordenada 
@@ -108,7 +111,8 @@ O código inicial de identificação em menção à disponibilidade retornou art
     \item `github', `zenodo'
     \item `data availability statement', `reasonable request', `available on request', `available upon request'
     \item `data availability', `code availability'
-\end{itemize}
+\end{itemize} 
+
 
 Dessa maneira, classifica-se os artigos em quatro critérios de disponibilidade, atribuindo valores em ordem crescente para análise estatística.
 \begin{itemize}
@@ -129,7 +133,7 @@ Em cada uma das pesquisas, os artigos foram analisados em planilhas .csv de cont
 O banco de dados consiste em 61 artigos em arquivos .pdf, separados pelos termos de pesquisa utilizados descritos em .txt e cujos resultados brutos são dispostos em .csv que, após selecionados, compõe arquivo .csv descrevendo informações de ano de publicação, revista e número de citações. Após tais análises, a classificação de reprodutibilidade em escala numérica e das regiões intermediárias dos estudos foi disposta em .csv que, passando por análise estatística, produziu .gpkg e o mapeamento.
 
 \subsection{Disponibilidade}
-A análise de disponibilidade foi realizada em duas instâncias. Com a menção de disponibilidade e necessidade de pedidos, obteve-se a Figura \ref{fig:dispon}. A partir da verificação, classificação numérica individual e distribuição da média de sua média nas regiões intermediárias estudadas, produz-se a Figura \ref{fig:repro}.
+A análise de disponibilidade foi realizada em duas instâncias. Com a menção de disponibilidade e necessidade de pedidos, obteve-se a Figura \ref{fig:dispon}. A partir da verificação, classificação numérica individual e distribuição de sua média nas regiões intermediárias estudadas, produz-se a Figura \ref{fig:repro}.
 
 
 \begin{figure}
@@ -143,11 +147,13 @@ A análise de disponibilidade foi realizada em duas instâncias. Com a menção 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../map/br-reprodutibility.png}
-    \caption{Regiões intermediárias e média de classe de reprodutibilidade, em escala crescente de 0 a 3.}
+    \caption{Regiões intermediárias e média de classe de reprodutibilidade, em escala crescente de 0 a 3, sendo o máximo da média atingida nas regiões de 1,5.}
     \label{fig:repro}
 \end{figure}
 
 Evidencia-se, desta maneira, não somente que muitos artigos não disponibilizam seus dados, como também a enorme deficiência de reprodutibilidade em tais estudos. Mesmo em áreas em que algum estudo se faz reprodutível, a maioria não possui tal preocupação, tornando a comparação e indicação de qualidade da análise praticamente impossível. 
+
+A escala de disponibilidade, tendo como máximo a metade da meta de reprodutibilidade, demonstra a ainda baixa preocupação científica com práticas de ciência aberta. 
 
 \subsection{Informações Correlatas}
 A distribuição ao longo dos anos de debate acerca de disponibilidade
@@ -182,12 +188,14 @@ acompanhando a tendência geral. (Figura \ref{fig:cited}). Porém, a proporção
 \end{figure}
 
  A análise de suscetibilidade é feita nos estudos principalmente por métodos estatísticos; ou seja, a indisponibilidade pode ser um enorme problema na qualidade da ciência reproduzível.
-No Brasil, a densidade populacional histórica no sudeste pode afetar o interesse prioritário em estudos na Serra do Mar, pois tal tendência não é seguida por toda a Grande Escarpa. A completa disponibilidade foi concentrada em cidades densamente povoadas. Dessa maneira, pode-se comparar a figura \ref{fig:dens} à figura \ref{fig:repro}, demonstrando ainda mais que a reprodutibilidade não se faz apenas com poucos estudos. 
+No Brasil, a densidade populacional histórica no sudeste pode afetar o interesse prioritário em estudos na Serra do Mar, pois tal tendência não é seguida por toda a Grande Escarpa. 
+
+Além disso, relaciona,-se os estudos com a presença de grandes universidades. A completa disponibilidade foi concentrada em cidades densamente povoadas próximas a polos tecnológicos. Dessa maneira, pode-se comparar a Figura \ref{fig:dens} à Figura \ref{fig:repro}, demonstrando ainda mais que a reprodutibilidade não se faz apenas com poucos estudos. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{../map/br-density.png}
-    \caption{Quantidade de estudos nas regiões intermediárias}
+    \caption{Quantidade de estudos nas regiões intermediárias. Percebe-se grande densidade na Serra do Mar e na Serra Geral.}
     \label{fig:dens}
 \end{figure}
 
@@ -204,6 +212,6 @@ A regionalização dos estudos também se demonstrou central, estando os artigos
 Não há conflito de interesses. Este projeto está submetido ao Programa Unificado de Bolsas da Universidade de São Paulo no período de setembro/25 a fevereiro/26.
 
 \nocite{*}
-\bibliography{intro-refs}
+\bibliography{intro-refs, ../data/br/br.bib}
 
 \end{document}
